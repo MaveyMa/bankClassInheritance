@@ -88,9 +88,9 @@ ostream& operator << (ostream& output, const BankAccount& bA)
     output << "Routing Number: " << bA.routingNumber << endl;
     output << "Social Security #: " << bA.socialSecNumber << endl;
     output << "Pin #: " << bA.pinNumber << endl;
-    output << "Balance: " << bA.balance << endl;
-    output << "Minimum Balance: " << bA.minimumBalance << endl;
-    output << "Monthly Fee: " << bA.monthlyFee << endl;
+    output << "Balance: $" << bA.balance << endl;
+    output << "Minimum Balance: $" << bA.minimumBalance << endl;
+    output << "Monthly Fee: $" << bA.monthlyFee << endl;
     output << "********************************" << endl;
     return output;
 }//END OVERLOADED OPERATOR <<

@@ -1,7 +1,7 @@
 #ifndef BANK_ACCOUNT_H
 #define BANK_ACCOUNT_H
 #include <string>
-#include <ostream>
+#include <fstream>
 using namespace std;
 
 class BankAccount

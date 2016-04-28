@@ -30,7 +30,7 @@ class BankAccount
         friend ostream& operator << (ostream& output, const BankAccount& bA);
         //GETTERS AND SETTERS
         double getBalance()const{return balance;}
-        void setBalance(double balance){this->balance=balance;}
+        void setBalance(double balance){this->balance=balance*1.0;}
 
         string getAccountNumber()const{return accountNumber;}
         void setAccountNumber(string accountNumber){this->accountNumber=accountNumber;}
@@ -55,10 +55,10 @@ class BankAccount
         void setPinNumber(int pinNumber){this->pinNumber=pinNumber;}
 
         double getMinimumBalance()const{return minimumBalance;}
-        void setMinimumBalance(double minimumBalance){this->minimumBalance=minimumBalance;}
+        void setMinimumBalance(double minimumBalance){this->minimumBalance=minimumBalance*1.0;}
 
         double getMonthlyFee()const{return monthlyFee;}
-        void setMonthlyFee(double monthlyFee){this->monthlyFee=monthlyFee;}
+        void setMonthlyFee(double monthlyFee){this->monthlyFee=monthlyFee*1.0;}
 };
 
 #endif //BANK_ACCOUNT_H

@@ -59,6 +59,19 @@ void SavingsAccount::applyInterest()
 ostream& operator << (ostream& output, const SavingsAccount& sA)
 {
     output << "********************************" << endl;
+    output << "* * B A N K*  *A C C O U N T * * " << endl;
+    output << "Name: " << sA.firstName << " "
+                       << sA.middleName << " "
+                       << sA.lastName << endl;
+    output << "Account Number: " << sA.accountNumber << endl;
+    output << "Account Type: " << sA.accountType << endl;
+    output << "Routing Number: " << sA.routingNumber << endl;
+    output << "Social Security #: " << sA.socialSecNumber << endl;
+    output << "Pin #: " << sA.pinNumber << endl;
+    output << "Balance: $" << sA.balance << endl;
+    output << "Minimum Balance: $" << sA.minimumBalance << endl;
+    output << "Monthly Fee: $" << sA.monthlyFee << endl;
+    output << "********************************" << endl;
     output << "* S A V I N G S  A C C O U N T * " << endl;
     output << "Interest Rate: " << sA.interestRate << "%" << endl;
     output << "Withdraw Limit: $" << sA.withdrawLimit << endl;

@@ -1,3 +1,4 @@
+//Name: Mavey Ma
 #include "BankAccount.h"
 #include "SavingsAccount.h"
 #include "CollegeFund.h"
@@ -20,7 +21,9 @@ int main()
     newCarSavings.setMonthlyTransferAmount(200);
     newCarSavings.setInterestRate(0.01);
     newCarSavings.setWithdrawLimit(5000);
-
+    cout << "==================================" << endl;
+    cout << "NEW CAR SAVINGS" << endl;
+    cout << newCarSavings;
     tonysFund4College.setFirstName("Tony");
     tonysFund4College.setLastName("Suarez");
     tonysFund4College.setRecipientFirstName("Tony");
@@ -31,7 +34,17 @@ int main()
     tonysFund4College.setIs18(false);
     tonysFund4College.setBalance(10000);
     tonysFund4College.setInterestRate(0.05);
-    
-    cout << "HELLO PANDA!" << endl; 
+    cout << "==================================" << endl;
+    cout << "TONY'S FUND FOR COLLEGE" << endl;
+    cout << tonysFund4College;
+    //Now for each account apply the interest (use function). newCarSavings balance should now be 3030.00, tonysFund4College’s balance should now be 10,500.00
+    newCarSavings.applyInterest();
+    tonysFund4College.applyInterest();
+    cout << "==================================" << endl;
+    cout << "NEW CAR SAVINGS" << endl;
+    cout << newCarSavings;
+    cout << "==================================" << endl;
+    cout << "TONY'S FUND FOR COLLEGE" << endl;
+    cout << tonysFund4College;
     return 0;
 }//END MAIN

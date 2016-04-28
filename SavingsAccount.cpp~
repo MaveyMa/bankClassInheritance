@@ -56,23 +56,23 @@ void SavingsAccount::applyInterest()
     return;
 }//END APPLY INTEREST
 
-ostream& operator << (ostream& output, const SavingsAccount& sA,
-                                       const BankAccount& bA)
+ostream& operator << (ostream& output, const SavingsAccount& sA)
 {
     output << "********************************" << endl;
     output << "* * B A N K*  *A C C O U N T * * " << endl;
-    output << "Name: " << bA.firstName << " "
-                       << bA.middleName << " "
-                       << bA.lastName << endl;
-    output << "Account Number: " << bA.accountNumber << endl;
-    output << "Account Type: " << bA.accountType << endl;
-    output << "Routing Number: " << bA.routingNumber << endl;
-    output << "Social Security #: " << bA.socialSecNumber << endl;
-    output << "Pin #: " << bA.pinNumber << endl;
-    output << "Balance: " << bA.balance << endl;
-    output << "Minimum Balance: " << bA.minimumBalance << endl;
-    output << "Monthly Fee: " << bA.monthlyFee << endl;
+    output << "Name: " << sA.firstName << " "
+                       << sA.middleName << " "
+                       << sA.lastName << endl;
+    output << "Account Number: " << sA.accountNumber << endl;
+    output << "Account Type: " << sA.accountType << endl;
+    output << "Routing Number: " << sA.routingNumber << endl;
+    output << "Social Security #: " << sA.socialSecNumber << endl;
+    output << "Pin #: " << sA.pinNumber << endl;
+    output << "Balance: $" << sA.balance << endl;
+    output << "Minimum Balance: $" << sA.minimumBalance << endl;
+    output << "Monthly Fee: $" << sA.monthlyFee << endl;
     output << "********************************" << endl;
+
     output << "********************************" << endl;
     output << "* S A V I N G S  A C C O U N T * " << endl;
     output << "Interest Rate: " << sA.interestRate << "%" << endl;
@@ -81,6 +81,5 @@ ostream& operator << (ostream& output, const SavingsAccount& sA,
     output << "Monthly Transfer Amount: $" << sA.monthlyTransferAmount << endl;
     output << "Account Frozen: " << sA.isFrozen << endl;
     output << "********************************" << endl;
-
-
+    return output;
 }

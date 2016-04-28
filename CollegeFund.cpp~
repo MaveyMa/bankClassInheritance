@@ -60,6 +60,27 @@ void CollegeFund::addRestriction(string restriction)
 
 ostream& operator << (ostream& output, const CollegeFund& cF)
 {
+
+output << "********************************" << endl;
+    output << "* * B A N K*  *A C C O U N T * * " << endl;
+    output << "Name: " << cF.firstName << " "
+                       << cF.middleName << " "
+                       << cF.lastName << endl;
+    output << "Account Number: " << cF.accountNumber << endl;
+    output << "Account Type: " << cF.accountType << endl;
+    output << "Routing Number: " << cF.routingNumber << endl;
+    output << "Social Security #: " << cF.socialSecNumber << endl;
+    output << "Pin #: " << cF.pinNumber << endl;
+    output << "Balance: $" << cF.balance << endl;
+    output << "Minimum Balance: $" << cF.minimumBalance << endl;
+    output << "Monthly Fee: $" << cF.monthlyFee << endl;
+    output << "********************************" << endl;
+    output << "* S A V I N G S  A C C O U N T * " << endl;
+    output << "Interest Rate: " << cF.interestRate << "%" << endl;
+    output << "Withdraw Limit: $" << cF.withdrawLimit << endl;
+    output << "Monthly Transfer Active: " << cF.isMonthlyTransferActive << endl;
+    output << "Monthly Transfer Amount: $" << cF.monthlyTransferAmount << endl;
+    output << "Account Frozen: " << cF.isFrozen << endl;
     output << "********************************" << endl;
     output << "* *C O L L E G E *  * F U N D* * " << endl;
     output << "Recipient Name: " << cF.recipientFirstName << " "
