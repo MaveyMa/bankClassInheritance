@@ -1,6 +1,7 @@
 #ifndef BANK_ACCOUNT_H
 #define BANK_ACCOUNT_H
 #include <string>
+#include <fstream>
 using namespace std;
 
 class BankAccount
@@ -26,6 +27,7 @@ class BankAccount
         void deposit(double amount);
         double getBalance();
         bool transfer(string accountNumber);
+        friend ostream& operator << (ostream& output, const BankAccount& bA);
         //GETTERS AND SETTERS
         double getBalance()const{return balance;}
         void setBalance(double balance){this->balance=balance;}

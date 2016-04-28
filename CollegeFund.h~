@@ -2,7 +2,6 @@
 #define COLLEGE_FUND_H
 #include <string>
 #include "SavingsAccount.h"
-
 using namespace std;
 
 class CollegeFund : public SavingsAccount
@@ -17,6 +16,7 @@ class CollegeFund : public SavingsAccount
             numRestrictions;
         bool is18;    
     public:
+        CollegeFund();
         CollegeFund(string recipientFirstName, string recipientMiddleName,
                     string recipientLastName, string recipientSocialSecNum,
                     int recipientAge, bool is18, double balance);

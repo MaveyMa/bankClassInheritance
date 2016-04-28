@@ -1,5 +1,6 @@
 #include "BankAccount.h"
 #include <iostream>
+#include <fstream>
 using namespace std;
 
 BankAccount::BankAccount()
@@ -74,3 +75,22 @@ bool BankAccount::transfer(string accountNumber)
         return true;
     }
 }//END DEPOSIT
+
+ostream& operator << (ostream& output, const BankAccount& bA)
+{
+    output << "********************************" << endl;
+    output << "* * B A N K*  *A C C O U N T * * " << endl;
+    output << "Name: " << bA.firstName << " "
+                       << bA.middleName << " "
+                       << bA.lastName << endl;
+    output << "Account Number: " << bA.accountNumber << endl;
+    output << "Account Type: " << bA.accountType << endl;
+    output << "Routing Number: " << bA.routingNumber << endl;
+    output << "Social Security #: " << bA.socialSecNumber << endl;
+    output << "Pin #: " << bA.pinNumber << endl;
+    output << "Balance: " << bA.balance << endl;
+    output << "Minimum Balance: " << bA.minimumBalance << endl;
+    output << "Monthly Fee: " << bA.monthlyFee << endl;
+    output << "********************************" << endl;
+    return output;
+}//END OVERLOADED OPERATOR <<

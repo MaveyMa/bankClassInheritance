@@ -1,7 +1,8 @@
 #ifndef SAVINGS_ACCOUNT_H
 #define SAVINGS_ACCOUNT_H
 #include "BankAccount.h"
-
+#include <fstream>
+using namespace std;
 class SavingsAccount : public BankAccount
 {
     protected:
@@ -11,11 +12,12 @@ class SavingsAccount : public BankAccount
         bool isMonthlyTransferActive,
              isFrozen;
     public:
+        SavingsAccount();
         SavingsAccount(double interestRate, double withdrawLimit,
-                       bool isMonthlyTransferActive, bool monthlyTransferAmount,
+                       bool isMonthlyTransferActive, double monthlyTransferAmount,
                        bool isFrozen, double balance);
         void applyInterest();
-
+        friend ostream& operator << (ostream& output, const SavingsAccount& sA);
         //GETTERS AND SETTERS
         double getInterestRate()const{return interestRate;}
         void setInterestRate(double interestRate){this->interestRate=interestRate;}

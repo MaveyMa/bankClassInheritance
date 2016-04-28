@@ -1,7 +1,19 @@
 #include "SavingsAccount.h"
+#include <fstream>
+using namespace std;
+
+SavingsAccount::SavingsAccount()
+{
+    setInterestRate(0);
+    setWithdrawLimit(0);
+    setMonthlyTransferAmount(0);
+    setIsMonthlyTransferActive(false);
+    setIsFrozen(true);
+    setBalance(0);
+}//END DEFAULT CONSTRUCTOR
 
 SavingsAccount::SavingsAccount(double interestRate, double withdrawLimit,
-                               bool isMonthlyTransferActive, bool monthlyTransferAmount,
+                               bool isMonthlyTransferActive, double monthlyTransferAmount,
                                bool isFrozen, double balance)
 {
     if (interestRate >= 0)
@@ -20,8 +32,8 @@ SavingsAccount::SavingsAccount(double interestRate, double withdrawLimit,
     {
         setWithdrawLimit(0);
     }
-    setMonthlyTransferAmount(isMonthlyTransferActive);
-    setIsMonthlyTransferActive(monthlyTransferAmount);
+    setIsMonthlyTransferActive(isMonthlyTransferActive);
+    setMonthlyTransferAmount(monthlyTransferAmount);
     setIsFrozen(isFrozen);
     if (balance >= 0)
     {
@@ -42,4 +54,17 @@ void SavingsAccount::applyInterest()
     // add interest to balance
     balance += (interestRate * balance);
     return;
-}//END APPLY INTEREST 
+}//END APPLY INTEREST
+
+ostream& operator << (ostream& output, const SavingsAccount& sA)
+{
+    output << "********************************" << endl;
+    output << "* S A V I N G S  A C C O U N T * " << endl;
+    output << "Interest Rate: " << sA.interestRate << "%" << endl;
+    output << "Withdraw Limit: $" << sA.withdrawLimit << endl;
+    output << "Monthly Transfer Active: " << sA.isMonthlyTransferActive << endl;
+    output << "Monthly Transfer Amount: $" << sA.monthlyTransferAmount << endl;
+    output << "Account Frozen: " << sA.isFrozen << endl;
+    output << "********************************" << endl;
+    return output;
+}

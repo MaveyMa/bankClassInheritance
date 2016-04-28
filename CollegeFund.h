@@ -16,11 +16,13 @@ class CollegeFund : public SavingsAccount
             numRestrictions;
         bool is18;    
     public:
+        CollegeFund();
         CollegeFund(string recipientFirstName, string recipientMiddleName,
                     string recipientLastName, string recipientSocialSecNum,
                     int recipientAge, bool is18, double balance);
         bool canRecieve();
         void addRestriction(string restriction);
+        friend ostream& operator << (ostream& output, const CollegeFund& cF);
         //GETTERS AND SETTERS
         string getRecipientFirstName()const{return recipientFirstName;}
         void setRecipientFirstName(string recipientFirstName){this->recipientFirstName=recipientFirstName;}

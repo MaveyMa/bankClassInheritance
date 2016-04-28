@@ -1,6 +1,7 @@
 #ifndef BANK_ACCOUNT_H
 #define BANK_ACCOUNT_H
 #include <string>
+#include <ostream>
 using namespace std;
 
 class BankAccount
@@ -26,7 +27,11 @@ class BankAccount
         void deposit(double amount);
         double getBalance();
         bool transfer(string accountNumber);
+        friend ostream& operator << (ostream& output, const BankAccount& bA);
         //GETTERS AND SETTERS
+        double getBalance()const{return balance;}
+        void setBalance(double balance){this->balance=balance;}
+
         string getAccountNumber()const{return accountNumber;}
         void setAccountNumber(string accountNumber){this->accountNumber=accountNumber;}
 
@@ -48,9 +53,6 @@ class BankAccount
 
         int getPinNumber()const{return pinNumber;}
         void setPinNumber(int pinNumber){this->pinNumber=pinNumber;}
-
-        double getBalance()const{return balance;}
-        void setBalance(double balance){this->balance=balance;}
 
         double getMinimumBalance()const{return minimumBalance;}
         void setMinimumBalance(double minimumBalance){this->minimumBalance=minimumBalance;}
