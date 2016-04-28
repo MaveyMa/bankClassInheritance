@@ -1,0 +1,18 @@
+#include "CollegeFund.h"
+
+CollegeFund::CollegeFund(string recipientFirstName, string recipientMiddleName,
+                        string recipientLastName, string recipientSocialSecNum,
+                        int recipientAge, bool is18, double balance)
+{
+
+}//END DEFAULT CONSTRUCTOR
+
+bool CollegeFund::canRecieve()
+{
+    return true;
+}//END CAN RECEIVE
+        
+void CollegeFund::addRestriction(string restriction)
+{
+    return;
+}//END ADD RESTRICTION
